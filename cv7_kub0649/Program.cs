@@ -1,59 +1,43 @@
 ﻿using ClassLib;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace cv7_kub0649
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            string[] text1 = new string[3];
+            Node<int, string> root = new Node<int, string>(0, "Root");
+            TreeMap<int, string> myTree = new TreeMap<int, string>(root);
 
-            text1[0] = "1";
-            text1[1] = "2";
-            text1[2] = "3";
+            myTree[1] = "A";
+            myTree[8] = "C";
+            myTree[5] = "B";
+            myTree[10] = "D";
+            myTree[9] = "E";
+            myTree[12] = "F";
+            myTree[15] = "G";
+            myTree[11] = "H";
+            myTree[19] = "I";
+            myTree[17] = "J";
 
-            for (int i = 0; i < text1.Length; i++)
-            {
-                Console.WriteLine(text1[i]);
-            }
+            //var c = myTree.ToArray();
 
-            Console.WriteLine("\n");
+            //Console.Write("Vsetky: ");
+            //for (int i = 0; i < c.Length; i++)
+            //{
+            //    Console.Write(c[i].Value + " ");
+            //}
 
-            ArrayHelper<string>.Swap(text1, 0, 1);
-
-            for (int i = 0; i < text1.Length; i++)
-            {
-                Console.WriteLine(text1[i]);
-            }
-
-
-            string[] concat_arr1 = new string[1];
-            concat_arr1[0] = "KUB";
-            string[] concat_arr2 = new string[1];
-            concat_arr2[0] = "0649";
-
-            string[] tst = ArrayHelper<string>.Concat(concat_arr1, concat_arr2);
-
-            Console.Write("\n");
-
-            foreach (var item in tst)
-            {
-                Console.Write(item);
-            }
-            
+            //myTree.PrintTree(root);
 
 
+            //Console.WriteLine("Value pre deletion: " + myTree[17]);
+            //myTree.DeleteValueONKey(17);
+            //Console.WriteLine("Value post deletion: " + myTree[17]);
 
 
-
-
-            
-
+            return 0;
         }
     }
 }

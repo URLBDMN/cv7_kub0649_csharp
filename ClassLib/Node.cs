@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLib
 {
-    class Node<K, V> : IKeyValuePair<K, V>
+    public class Node<K, V> : IKeyValuePair<K, V>
     {
         public K Key { get; private set; }
         public V Value { get; set; }
